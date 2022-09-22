@@ -1,2 +1,2 @@
 # CS640
-CS640 Projects
+CS640 Projects .
