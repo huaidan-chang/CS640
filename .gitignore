@@ -1,0 +1,9 @@
+# java
+*target*
+*.jar
+*.war
+*.ear
+*.class
+
+# MacOS
+**/.DS_Store
