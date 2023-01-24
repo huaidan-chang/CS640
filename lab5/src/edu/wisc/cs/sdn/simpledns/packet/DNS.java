@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DNS 
+public class DNS implements Cloneable
 {
 	public static final short TYPE_A = 1;
 	public static final short TYPE_NS = 2;
@@ -13,6 +13,7 @@ public class DNS
 	public static final short TYPE_AAAA = 28;
 	public static final short TYPE_CDN = 258;
 	public static final short TYPE_EC2 = 259;
+	public static final short TYPE_TXT = 16;
 	
 	public static final short CLASS_IN = 1;
 	
@@ -357,4 +358,10 @@ public class DNS
 		
 		return data;
 	}
+	
+	@Override
+    public DNS clone(){
+        byte[] data = this.serialize();
+        return DNS.deserialize(data, data.length);
+    }
 }
